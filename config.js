@@ -27,12 +27,12 @@ const MODULES = {
   },
   tracker: {
     name: "Tracker Kendala",
-    url: "",
-    status: "Segera Hadir"
+    url: "trackerkendala.kaiops9.com",
+    status: "28-08-2026"
   },
   inovation: {
     name: "Inovation",
-    url: "",
+    url: "maintenance.kaiops9.com",
     status: "Segera Hadir"
   }
 };
