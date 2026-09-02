@@ -18,17 +18,17 @@ const MODULES = {
   station: {
     name: "RailStatiON",
     url: "https://railstation.kaiops9.com",
-    status: "Segera Hadir"
+    status: "27-08-2026"
   },
   imo: {
     name: "IMO Tools",
     url: "https://imo.kaiops9.com",
-    status: "EST. 27 Agustus 2026"
+    status: "27-08-2026"
   },
   tracker: {
     name: "Tracker Kendala",
     url: "https://trackerkendala.kaiops9.com",
-    status: "EST. 10 Agustus 2026"
+    status: "28-08-2026"
   },
   inovation: {
     name: "Inovation",
