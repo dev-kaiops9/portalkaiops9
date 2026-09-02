@@ -77,6 +77,18 @@
       transform-origin: center top;
     }
 
+    /* Strip tipis sewarna background untuk menutup garis seam yang kadang
+       muncul di tepi bawah video akibat rendering border-radius + overflow */
+    .loco-float-mask {
+      position: absolute;
+      left: -2%;
+      right: -2%;
+      bottom: -1px;
+      height: 6px;
+      background: #F5F7FB;
+      pointer-events: none;
+    }
+
     .portal-card {
       transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
     }
@@ -163,6 +175,9 @@
             preload="auto"
             aria-label="Petugas KAI OPS 9">
           </video>
+          <!-- Penutup garis seam tipis yang muncul di tepi bawah video (bug rendering border-radius+overflow di sebagian browser) -->
+          <div class="loco-float-mask"></div>
+        </div>
         </div>
       </div>
     </div>
