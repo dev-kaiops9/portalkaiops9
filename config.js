@@ -21,7 +21,7 @@ const MODULES = {
     status: "27-08-2026"
   },
   converter: {
-    name: "Converter",
+    name: "IMO Tools",
     url: "https://imo.kaiops9.com",
     status: "27-08-2026"
   },
