@@ -62,9 +62,19 @@
       z-index: 0;
     }
 
-    .loco-float {
+    .loco-float-wrap {
       border-radius: 24px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .loco-float {
       display: block;
+      width: 100%;
+      /* Sedikit diperbesar & digeser agar garis tipis di tepi bawah video
+         (bawaan dari file mp4-nya) terpotong keluar area yang terlihat */
+      transform: scale(1.04);
+      transform-origin: center top;
     }
 
     .portal-card {
@@ -141,17 +151,19 @@
 
       <!-- Kolom kanan: video 3 karakter petugas KAI (setengah badan, auto-loop halus, menyatu dengan halaman) -->
       <div class="flex flex-col justify-center items-center">
-        <video
-          class="loco-float w-full max-w-[520px]"
-          src="assets/video/kai-characters.mp4"
-          poster="assets/img/kai-characters-poster.jpg"
-          autoplay
-          muted
-          loop
-          playsinline
-          preload="auto"
-          aria-label="Petugas KAI OPS 9">
-        </video>
+        <div class="loco-float-wrap w-full max-w-[520px]">
+          <video
+            class="loco-float"
+            src="assets/video/kai-characters.mp4"
+            poster="assets/img/kai-characters-poster.jpg"
+            autoplay
+            muted
+            loop
+            playsinline
+            preload="auto"
+            aria-label="Petugas KAI OPS 9">
+          </video>
+        </div>
       </div>
     </div>
   </section>
