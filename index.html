@@ -73,13 +73,14 @@
     .loco-float {
       animation: locoFloat 4.5s ease-in-out infinite;
       will-change: transform;
-      /* Bagian bawah gambar (paha ke bawah) memang "rata" terpotong dari
-         sumber aslinya (tidak ada kaki/sepatu). Supaya tidak terkesan
-         terpotong tiba-tiba, bagian bawah gambar dibuat memudar jadi
-         transparan (fade-out) — jadi terlihat seperti gaya ilustrasi
-         "melayang menyatu ke bawah", bukan terpotong rata. */
-      -webkit-mask-image: linear-gradient(to bottom, #000 78%, transparent 96%);
-              mask-image: linear-gradient(to bottom, #000 78%, transparent 96%);
+      border-radius: 24px;
+      /* Video "setengah badan" berlatar putih polos (bukan transparan
+         seperti PNG asli), tapi warnanya sudah sangat dekat dengan bg
+         halaman (#F5F7FB). Tepi atas & bawah dibuat memudar transparan
+         supaya sambungan video ke bg halaman terlihat menyatu, bukan
+         seperti kotak video yang terpotong tegas. */
+      -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 12%, #000 78%, transparent 97%);
+              mask-image: linear-gradient(to bottom, transparent 0%, #000 12%, #000 78%, transparent 97%);
     }
     .loco-shadow {
       width: 62%;
@@ -164,9 +165,19 @@
         </div>
       </div>
 
-      <!-- Kolom kanan: ilustrasi 3 karakter petugas KAI (background transparan, menyatu dengan halaman) -->
+      <!-- Kolom kanan: video 3 karakter petugas KAI (setengah badan, auto-loop halus, menyatu dengan halaman) -->
       <div class="flex flex-col justify-center items-center">
-        <img src="assets/img/kai-characters.png" alt="Petugas KAI OPS 9" class="loco-float w-full max-w-[520px] drop-shadow-xl">
+        <video
+          class="loco-float w-full max-w-[520px]"
+          src="assets/video/kai-characters.mp4"
+          poster="assets/img/kai-characters-poster.jpg"
+          autoplay
+          muted
+          loop
+          playsinline
+          preload="auto"
+          aria-label="Petugas KAI OPS 9">
+        </video>
         <div class="loco-shadow"></div>
       </div>
     </div>
